@@ -3,7 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:if test="${not empty messages}">
-	<p><fmt:message key="locale.messages.errors" />:</p>
 	<ul>
 		<c:forEach var="messageKey" items="${requestScope.messages}">
 			<li><fmt:message key="${messageKey}" /></li>

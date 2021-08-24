@@ -9,7 +9,7 @@ USE
 DROP TABLE IF EXISTS `i18n`;
 CREATE TABLE `i18n`
 (
-    `id`     int     NOT NULL AUTO_INCREMENT,
+    `id`     int        NOT NULL AUTO_INCREMENT,
     `locale` varchar(5) NOT NULL,
     `name`   varchar(32) DEFAULT '',
     PRIMARY KEY (`id`),
@@ -19,7 +19,7 @@ CREATE TABLE `i18n`
 DROP TABLE IF EXISTS `amenity`;
 CREATE TABLE `amenity`
 (
-    `id`    int          NOT NULL AUTO_INCREMENT,
+    `id`    int NOT NULL AUTO_INCREMENT,
     `price` int DEFAULT 0,
     PRIMARY KEY (`id`)
 );
@@ -27,9 +27,9 @@ CREATE TABLE `amenity`
 DROP TABLE IF EXISTS `amenity_i18n`;
 CREATE TABLE `amenity_i18n`
 (
-    `id`         int       NOT NULL AUTO_INCREMENT,
+    `id`         int          NOT NULL AUTO_INCREMENT,
     `amenity_id` int          NOT NULL,
-    `i18n_id`    int       NOT NULL,
+    `i18n_id`    int          NOT NULL,
     `name`       varchar(255) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `amenity_i18n_uindex`(`amenity_id`, `i18n_id`),
@@ -40,23 +40,23 @@ CREATE TABLE `amenity_i18n`
 DROP TABLE IF EXISTS `room_type`;
 CREATE TABLE `room_type`
 (
-    `id`          int          NOT NULL AUTO_INCREMENT,
-    `occupancy`   int          NOT NULL,
-    `image`       varchar(255) DEFAULT '',
-    `size`        int          DEFAULT 0,
-    `price`       int          DEFAULT 0,
-    `rooms`       int          DEFAULT 0,
-    `access`	  boolean	   DEFAULT false,
+    `id`        int NOT NULL AUTO_INCREMENT,
+    `occupancy` int NOT NULL,
+    `image`     varchar(255) DEFAULT '',
+    `size`      int          DEFAULT 0,
+    `price`     int          DEFAULT 0,
+    `rooms`     int          DEFAULT 0,
+    `access`    boolean      DEFAULT false,
     PRIMARY KEY (`id`),
-    INDEX  `occupancy_index`(`occupancy`)
+    INDEX       `occupancy_index`(`occupancy`)
 );
 
 DROP TABLE IF EXISTS `room_type_i18n`;
 CREATE TABLE `room_type_i18n`
 (
-    `id`           int       NOT NULL AUTO_INCREMENT,
+    `id`           int          NOT NULL AUTO_INCREMENT,
     `room_type_id` int          NOT NULL,
-    `i18n_id`      int       NOT NULL,
+    `i18n_id`      int          NOT NULL,
     `name`         varchar(255) NOT NULL,
     `description`  varchar(512) DEFAULT '',
     PRIMARY KEY (`id`),

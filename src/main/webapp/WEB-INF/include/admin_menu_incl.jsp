@@ -3,8 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="com.khodko.RoyalHotel.config.Path" %>
 
-<h3><fmt:message key="locale.admin.menu.name" /></h3>
-<ul>
+<!--<h3><fmt:message key="locale.admin.menu.name" /></h3>-->
+<ul class="userItems">
 	<li><a href="${requestScope.basepath}${Path.ADMIN_LANGS}">Languages</a></li>
     <li><a href="${requestScope.basepath}${Path.ADMIN_ORDERS}"><fmt:message key="locale.admin.menu.orders" /></a></li>
     <li><a href="${requestScope.basepath}${Path.ADMIN_ROOMTYPES}"><fmt:message key="locale.admin.menu.roomtypes" /></a></li>

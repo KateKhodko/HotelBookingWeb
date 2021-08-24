@@ -10,35 +10,44 @@
 <html>
 <head>
     <title>Sign up</title>
+    <link rel="stylesheet" href="${basepath}/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/form1.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/footer1.css" type="text/css"/>
 </head>
 <body>
 
-<c:import url="${Path.LOCALE_MENU_INCL}" />
-<c:import url="${Path.MESSAGES_INCL}" />
+<c:import url="${Path.HEADER_INCL}"/>
 
-<h1><fmt:message key="locale.signup.title" /></h1>
+<img class="image" src="${basepath}/images/home2.jpeg">
 
-<form action="${basepath}${Path.PUBLIC_SIGNUP}" method="post">
-    <div>
-	    <label for="inputName"><fmt:message key="locale.signup.name" /></label>
-	    <input id="inputName" type="text" placeholder="Name"
-	    	name="${SignupForm.usernameName}" value="<c:out value='${signupForm.usernameValue}'/>" autofocus>
+<div class="overlay">
+    <div class="dataOverlay">
+        <h1><fmt:message key="locale.signup.title" /></h1>
+        <c:import url="${Path.MESSAGES_INCL}" />
+        <form action="${basepath}${Path.PUBLIC_SIGNUP}" method="post">
+            <div>
+                <label for="inputName"><fmt:message key="locale.signup.name" /></label>
+                <input id="inputName" type="text" placeholder="Name"
+                       name="${SignupForm.usernameName}" value="<c:out value='${signupForm.usernameValue}'/>" autofocus>
+            </div>
+            <div>
+                <label for="inputEmail"><fmt:message key="locale.signup.email" /></label>
+                <input id="inputEmail" type="email" placeholder="Email address"
+                       name="${SignupForm.emailName}" value="<c:out value='${signupForm.emailValue}'/>" >
+            </div>
+            <div>
+                <label for="inputPassword"><fmt:message key="locale.signup.password" /></label>
+                <input id="inputPassword" type="password" name="${SignupForm.passwordName}" value="" placeholder="Password"/>
+            </div>
+            <div>
+                <label for="inputPasswordRepeat"><fmt:message key="locale.signup.repeat" /></label>
+                <input id="inputPasswordRepeat" type="password" name="${SignupForm.passwordRepeatName}" value="" placeholder="Repeat password">
+            </div>
+
+            <button type="submit" class="registerButton"><fmt:message key="locale.signup.signup" /></button>
+        </form>
     </div>
-    <div>
-	    <label for="inputEmail"><fmt:message key="locale.signup.email" /></label>
-	    <input id="inputEmail" type="email" placeholder="Email address"
-	    	name="${SignupForm.emailName}" value="<c:out value='${signupForm.emailValue}'/>" >
-    </div>
-    <div>
-	    <label for="inputPassword"><fmt:message key="locale.signup.password" /></label>
-	    <input id="inputPassword" type="password" name="${SignupForm.passwordName}" value="" placeholder="Password"/>
-    </div>
-    <div>
-	    <label for="inputPasswordRepeat"><fmt:message key="locale.signup.repeat" /></label>
-	    <input id="inputPasswordRepeat" type="password" name="${SignupForm.passwordRepeatName}" value="" placeholder="Repeat password">
-    </div>
-    
-    <button type="submit"><fmt:message key="locale.signup.signup" /></button>
-</form>
+    <c:import url="${Path.FOOTER_INCL}"/>
+</div>
 
 </html>

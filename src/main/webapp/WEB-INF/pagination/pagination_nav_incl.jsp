@@ -22,7 +22,7 @@
 	            <c:choose>
 	                <c:when test="${requestScope.inputForm.pageValue eq i}">
 	                    <li class="page-item active">
-	                        <a class="page-link">${i} <span class="sr-only">(current)</span></a>
+	                        <a class="page-link">${i}</a>
 	                    </li>
 	                </c:when>
 	                <c:otherwise>

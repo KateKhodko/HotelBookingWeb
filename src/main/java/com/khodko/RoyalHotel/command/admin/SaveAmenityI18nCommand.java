@@ -8,8 +8,6 @@ import com.khodko.RoyalHotel.form.AmenityI18nForm;
 import com.khodko.RoyalHotel.model.AmenityI18n;
 import com.khodko.RoyalHotel.service.AmenityI18nService;
 import com.khodko.RoyalHotel.service.ServiceException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -17,8 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class SaveAmenityI18nCommand implements Command {
-
-    private final static Logger LOGGER = LogManager.getLogger(SaveAmenityI18nCommand.class);
        
     private final AmenityI18nService amenityI18nService;
 

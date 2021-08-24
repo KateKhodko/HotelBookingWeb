@@ -9,13 +9,12 @@
 <html>
 <head>
     <title>Admin main</title>
-    <link rel="stylesheet" href="${basepath}/styles/main.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/main1.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/header.css" type="text/css"/>
 </head>
 <body>
 
-<c:import url="${Path.LOCALE_MENU_INCL}" />
-<c:import url="${Path.LOGOUT_INCL}" />
-<c:import url="${Path.ADMIN_MENU_INCL}"/>
+<c:import url="${Path.HEADER_INCL}"/>
 
 
 <h1><fmt:message key="locale.admin.title" /></h1>

@@ -16,6 +16,8 @@ public class Path {
     public final static String ADMIN_MENU_INCL = "/WEB-INF/include/admin_menu_incl.jsp";
     public final static String LOCALE_MENU_INCL = "/WEB-INF/include/locale_menu_incl.jsp";
     public final static String LOCALE_HEADER_INCL = "/WEB-INF/include/locale_header_incl.jsp";
+    public final static String HEADER_INCL = "/WEB-INF/include/header_incl.jsp";
+    public final static String FOOTER_INCL = "/WEB-INF/include/footer_incl.jsp";
     
     public final static String PAGINATION_SELECT_INCL = "/WEB-INF/pagination/pagination_select_incl.jsp";
     public final static String PAGINATION_NAV_INCL = "/WEB-INF/pagination/pagination_nav_incl.jsp";

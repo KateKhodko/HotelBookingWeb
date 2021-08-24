@@ -8,48 +8,65 @@
 <html>
 <head>
     <title>Order</title>
-    <link rel="stylesheet" href="${requestScope.basepath}/styles/main.css" type="text/css"/>
+    <link rel="stylesheet" href="${requestScope.basepath}/styles/main1.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/profile1.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/footer1.css" type="text/css"/>
 </head>
 <body>
 
-<c:import url="${Path.LOCALE_MENU_INCL}" />
-<c:import url="${Path.LOGOUT_INCL}"/>
+<c:import url="${Path.HEADER_INCL}"/>
 
-<h1><fmt:message key="locale.public.order.title" /></h1>
+<img class="image" src="${basepath}/images/bg.jpeg">
+<div class="overlay">
+    <div class="dataOverlay">
+        <h1><fmt:message key="locale.public.order.title" /></h1>
+        <div class="orderInfo">
+            <h2>Basic info</h2>
+            <div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.name" /></span>: <c:out value='${requestScope.roomType.roomTypeI18n.name}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.arrival" /></span>: <c:out value='${requestScope.booking.arrivalDate}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.depart" /></span>: <c:out value='${requestScope.booking.departDate}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.adults" /></span>: <c:out value='${requestScope.booking.numAdults}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.children" /></span>: <c:out value='${requestScope.booking.numChildren}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.email" /></span>: <c:out value='${requestScope.authUser.email}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.firstname" /></span>: <c:out value='${requestScope.authUser.firstName}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.lastname" /></span>: <c:out value='${requestScope.authUser.lastName}'/></p>
+                </div>
+                <div>
+                    <p><span><fmt:message key="locale.public.order.country" /></span>: <c:out value='${requestScope.authUser.country}'/></p>
+                </div>
+                <div>
+                    <p><c:out value='${requestScope.message}'/></p>
+                </div>
+            </div>
+        </div>
 
-<div>
-    <p><c:out value='${requestScope.message}'/></p>
+        <div class="totalPrice">
+            <h2><fmt:message key="locale.public.order.totalprice" /></h2>
+            <div>
+                <p><c:out value='${requestScope.booking.price}'/> $</p>
+            </div>
+        </div>
+    </div>
+    <c:import url="${Path.FOOTER_INCL}"/>
 </div>
-<div>
-    <p><fmt:message key="locale.public.order.name" />: <c:out value='${requestScope.roomType.roomTypeI18n.name}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.arrival" />: <c:out value='${requestScope.booking.arrivalDate}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.depart" />: <c:out value='${requestScope.booking.departDate}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.adults" />: <c:out value='${requestScope.booking.numAdults}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.children" />: <c:out value='${requestScope.booking.numChildren}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.email" />: <c:out value='${requestScope.authUser.email}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.firstname" />: <c:out value='${requestScope.authUser.firstName}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.lastname" />: <c:out value='${requestScope.authUser.lastName}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.country" />: <c:out value='${requestScope.authUser.country}'/></p>
-</div>
-<div>
-    <p><fmt:message key="locale.public.order.totalprice" />: <c:out value='${requestScope.booking.price}'/></p>
-</div>
+
 
 </body>
 </html>

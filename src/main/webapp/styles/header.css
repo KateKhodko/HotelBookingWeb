@@ -11,7 +11,7 @@ a {
 }
 
 .menu {
-    background-color: #6c6047;
+    background-color: #342C25FF;
     font: 1.0em Lato, sans-serif;
     overflow: hidden;
     display: flex;
@@ -32,14 +32,10 @@ a {
     list-style-type: none;
 }
 
-.mainMenu li {
-    padding: 14px 16px;
-}
-
-.mainMenu a {
+.mainA {
     position: relative;
     display: block;
-    padding: 4px 0;
+    padding: 18px 16px;
     font-family: Lato, sans-serif;
     color: #ecf0f1;
     text-decoration: none;
@@ -47,7 +43,7 @@ a {
     transition: 0.5s;
 }
 
-.mainMenu a::after {
+.mainA::after {
      position: absolute;
      content: "";
      top: 100%;
@@ -60,11 +56,11 @@ a {
      transition: transform 0.5s;
 }
 
-.mainMenu a:hover {
+.mainA:hover {
      color: #e3ca99;
 }
 
-.mainMenu a:hover::after {
+.mainA:hover::after {
      transform: scaleX(1);
      transform-origin: left;
 }
@@ -75,27 +71,34 @@ a {
     transition: 1s;
 }
 
-.loginLink a, .langMenu span {
+.loginLink a, .langMenu span, .loginMenu span {
     display: inline-block;
     color: #b08f34;
     padding: 18px 16px;
     text-transform: uppercase;
 }
 
-.loginLink a:hover, .langMenu span:hover, .langMenu span:active {
+.loginLink a:hover, .langMenu span:hover, .langMenu span:active, .loginMenu span:hover {
     color: #f2f2f2;
 }
 
-.langMenu:hover, .loginLink:hover {
+.langMenu:hover, .loginLink:hover, .loginMenu:hover {
     background-color: #cea655;
 }
 
-.languages {
+.languages, .logins, .userItems {
     visibility: hidden;
     opacity: 0;
     display: none;
     background: #f2f2f2;
     position: absolute;
+}
+
+.logins {
+    left: 0;
+}
+
+.languages {
     right: 0;
 }
 
@@ -104,21 +107,43 @@ a {
     visibility: visible;
     opacity: 1;
     display: block;
-    min-width: 200px;
+    min-width: 250px;
     text-align: left;
     padding-top: 20px;
     box-shadow: 0 3px 5px -1px #ccc;
 }
 
-.langMenu {
+.loginMenu:hover > ul,
+.logins ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 250px;
+    text-align: left;
+    padding-top: 20px;
+    box-shadow: 0 3px 5px -1px #ccc;
+}
+
+.userMenu:hover > ul,
+.userItems ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 145px;
+    text-align: left;
+    padding-top: 20px;
+    box-shadow: 0 3px 5px -1px #ccc;
+}
+
+.langMenu, .loginMenu, .userItems {
     cursor: pointer;
-    min-width: 200px;
+    min-width: 250px;
     text-align: center;
     background-color: #f2f2f2;
     transition: 1s;
 }
 
-.languages li {
+.languages li, .logins li, .userItems li {
     clear: both;
     width: 100%;
     text-align: left;
@@ -127,13 +152,13 @@ a {
     padding-left: 10px;
 }
 
-.languages li a:hover {
+.languages li a:hover, .logins li a:hover, .userItems li a:hover {
     padding-left: 10px;
     border-left: 2px solid #b08f34;
     transition: all 0.3s ease;
 }
 
-.languages li a {
+.languages li a, .logins li a, .userItems li a {
     transition: all 0.5s ease;
     color: #b08f34;
 }

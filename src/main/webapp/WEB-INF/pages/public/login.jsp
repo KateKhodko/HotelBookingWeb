@@ -10,34 +10,43 @@
 <html>
 <head>
     <title>Log in</title>
+    <link rel="stylesheet" href="${basepath}/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/form1.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/footer1.css" type="text/css"/>
 </head>
 <body>
 
-<c:import url="${Path.LOCALE_MENU_INCL}" />
+<c:import url="${Path.HEADER_INCL}"/>
 
-<h1><fmt:message key="locale.login.title" /></h1>
+<img class="image" src="${basepath}/images/home2.jpeg">
+<div class="overlay">
+    <div class="dataOverlay">
+        <h1><fmt:message key="locale.login.title" /></h1>
 
-<c:import url="${Path.MESSAGES_INCL}" />
+        <c:import url="${Path.MESSAGES_INCL}" />
 
-<form action="${requestScope.basepath}${Path.PUBLIC_LOGIN}" method="post">
-    <div>
-	    <label for="inputEmail"><fmt:message key="locale.login.email" /></label>
-	    <input id="inputEmail" type="email" placeholder="Email address"
-	    	    name="${LoginForm.emailName}" value="<c:out value='${requestScope.loginForm.emailValue}'/>" >
+        <form action="${requestScope.basepath}${Path.PUBLIC_LOGIN}" method="post">
+            <div>
+                <label for="inputEmail"><fmt:message key="locale.login.email" /></label>
+                <input id="inputEmail" type="email" placeholder="Email address"
+                       name="${LoginForm.emailName}" value="<c:out value='${requestScope.loginForm.emailValue}'/>" >
+            </div>
+            <div>
+                <label for="inputPassword"><fmt:message key="locale.login.password" /></label>
+                <input id="inputPassword" type="password" placeholder="Password"
+                       name="${LoginForm.passwordName}" value="" />
+            </div>
+            <div class="rememberBox">
+                <input id="inputRememberMe" class="checkbox" type="checkbox" name="${LoginForm.rememberMeName}" ${requestScope.loginForm.rememberMeValue}/>
+                <label for="inputRememberMe" class="rememberMe"><fmt:message key="locale.login.remember" /></label>
+            </div>
+            <button type="submit"><fmt:message key="locale.login.login" /></button>
+        </form>
+
+        <p><a href="${requestScope.basepath}${Path.PUBLIC_SHOW_SIGNUP}"><fmt:message key="locale.login.signup" /></a></p>
     </div>
-    <div>
-	    <label for="inputPassword"><fmt:message key="locale.login.password" /></label>
-	    <input id="inputPassword" type="password" placeholder="Password"
-               name="${LoginForm.passwordName}" value="" />
-    </div>    
-    <div>
-    	<input id="inputRememberMe" type="checkbox" name="${LoginForm.rememberMeName}" ${requestScope.loginForm.rememberMeValue}/>
-    	<label for="inputRememberMe"><fmt:message key="locale.login.remember" /></label>
-	</div>
-    <br/>
-    <button type="submit"><fmt:message key="locale.login.login" /></button>
-</form>
+    <c:import url="${Path.FOOTER_INCL}"/>
+</div>
 
-<p><a href="${requestScope.basepath}${Path.PUBLIC_SHOW_SIGNUP}"><fmt:message key="locale.login.signup" /></a></p>
 
 </html>

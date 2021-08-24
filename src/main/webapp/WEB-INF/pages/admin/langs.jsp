@@ -10,59 +10,70 @@
 <html>
 <head>
     <title>Languages</title>
-    <link rel="stylesheet" href="${requestScope.basepath}/styles/main.css" type="text/css"/>
+    <link rel="stylesheet" href="${requestScope.basepath}/styles/main1.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/orderss.css" type="text/css"/>
+    <link rel="stylesheet" href="${basepath}/styles/footer1.css" type="text/css"/>
 </head>
 <body>
 
-<c:import url="${Path.LOCALE_MENU_INCL}" />
-<c:import url="${Path.LOGOUT_INCL}"/>
-<c:import url="${Path.ADMIN_MENU_INCL}"/>
+<c:import url="${Path.HEADER_INCL}"/>
 
-<h1>Languages</h1>
+<img src="${basepath}/images/translate.jfif" class="img">
+<div class="overlay">
+    <h1>Languages</h1>
+</div>
 
-<form action="${requestScope.basepath}${Path.ADMIN_SAVE_LANG}" method="post">
-    <div>
-        <label for="input-lang">Locale :</label>
-        <input id="input-lang" type="text" name="${LangForm.localeName}" value="<c:out value='${requestScope.langForm.localeValue}'/>">
+<div class="dateFilter">
+    <h2>Add language</h2>
+    <div class="formBox">
+        <form action="${requestScope.basepath}${Path.ADMIN_SAVE_LANG}" method="post" class="amenityForm">
+            <div>
+                <label for="input-lang">Locale :</label>
+                <input id="input-lang" type="text" name="${LangForm.localeName}" value="<c:out value='${requestScope.langForm.localeValue}'/>">
+            </div>
+            <div>
+                <label for="input-name">Name :</label>
+                <input id="input-name" type="text" name="${LangForm.nameName}" value="<c:out value='${requestScope.langForm.nameValue}'/>">
+            </div>
+            <button type="submit">Add</button>
+        </form>
+        <c:import url="${Path.MESSAGES_INCL}"/>
     </div>
-    <div>
-        <label for="input-name">Name :</label>
-        <input id="input-name" type="text" name="${LangForm.nameName}" value="<c:out value='${requestScope.langForm.nameValue}'/>">
-    </div>
-    <button type="submit">Add</button>
-</form>
+</div>
 
-<c:import url="${Path.MESSAGES_INCL}"/>
-
-<table>
-    <tr>
-        <th>Locale</th>
-        <th>Name</th>
-        <th>Update</th>
-        <th>Delete</th>        
-    </tr>
-    <c:forEach var="lang" items="${requestScope.langs}">
+<div class="tableBox">
+    <table class="amenitiesTable">
         <tr>
-            <form action="${requestScope.basepath}${Path.ADMIN_SAVE_LANG}" method="post">
-                <input type="hidden" name="${LangForm.idName}" value="${lang.id}">                
-                <td>
-                    <input type="text" name="${LangForm.localeName}" value="<c:out value='${lang.locale}'/>">
-                </td>
-                <td>
-                    <input type="text" name="${LangForm.nameName}" value="<c:out value='${lang.name}'/>">
-                </td>
-                <td>
-                    <button type="submit">Update</button>
-                </td>
-            </form>           
-            <td>
-                <form action="${requestScope.basepath}${Path.ADMIN_DELETE_LANG}/${lang.id}" method="get">                    
-                    <button type="submit">Delete</button>
-                </form>
-            </td>
+            <th>Locale</th>
+            <th>Name</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach var="lang" items="${requestScope.langs}">
+            <tr>
+                <form action="${requestScope.basepath}${Path.ADMIN_SAVE_LANG}" method="post">
+                    <input type="hidden" name="${LangForm.idName}" value="${lang.id}">
+                    <td>
+                        <input type="text" name="${LangForm.localeName}" value="<c:out value='${lang.locale}'/>">
+                    </td>
+                    <td>
+                        <input type="text" name="${LangForm.nameName}" value="<c:out value='${lang.name}'/>">
+                    </td>
+                    <td>
+                        <button type="submit">Update</button>
+                    </td>
+                </form>
+                <td>
+                    <form action="${requestScope.basepath}${Path.ADMIN_DELETE_LANG}/${lang.id}" method="get">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
+<c:import url="${Path.FOOTER_INCL}"/>
 
 </body>
 </html>
