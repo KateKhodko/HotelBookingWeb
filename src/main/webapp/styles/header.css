@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+.menu {
+    background-color: #6c6047;
+    font: 1.0em Lato, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.mainMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    list-style-type: none;
+}
+
+.mainMenu li {
+    padding: 14px 16px;
+}
+
+.mainMenu a {
+    position: relative;
+    display: block;
+    padding: 4px 0;
+    font-family: Lato, sans-serif;
+    color: #ecf0f1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.mainMenu a::after {
+     position: absolute;
+     content: "";
+     top: 100%;
+     left: 0;
+     width: 100%;
+     height: 3px;
+     background: #cea655;
+     transform: scaleX(0);
+     transform-origin: right;
+     transition: transform 0.5s;
+}
+
+.mainMenu a:hover {
+     color: #e3ca99;
+}
+
+.mainMenu a:hover::after {
+     transform: scaleX(1);
+     transform-origin: left;
+}
+
+.loginLink {
+    text-align: center;
+    background-color: #f2f2f2;
+    transition: 1s;
+}
+
+.loginLink a, .langMenu span {
+    display: inline-block;
+    color: #b08f34;
+    padding: 18px 16px;
+    text-transform: uppercase;
+}
+
+.loginLink a:hover, .langMenu span:hover, .langMenu span:active {
+    color: #f2f2f2;
+}
+
+.langMenu:hover, .loginLink:hover {
+    background-color: #cea655;
+}
+
+.languages {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    background: #f2f2f2;
+    position: absolute;
+    right: 0;
+}
+
+.langMenu:hover > ul,
+.languages ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 200px;
+    text-align: left;
+    padding-top: 20px;
+    box-shadow: 0 3px 5px -1px #ccc;
+}
+
+.langMenu {
+    cursor: pointer;
+    min-width: 200px;
+    text-align: center;
+    background-color: #f2f2f2;
+    transition: 1s;
+}
+
+.languages li {
+    clear: both;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    border-style: none;
+    padding-left: 10px;
+}
+
+.languages li a:hover {
+    padding-left: 10px;
+    border-left: 2px solid #b08f34;
+    transition: all 0.3s ease;
+}
+
+.languages li a {
+    transition: all 0.5s ease;
+    color: #b08f34;
+}
